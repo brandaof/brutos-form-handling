@@ -11,7 +11,6 @@ import javax.validation.Valid;
 import org.brandao.brutos.annotation.Action;
 import org.brandao.brutos.annotation.Basic;
 import org.brandao.brutos.annotation.Result;
-import org.brandao.brutos.annotation.Transient;
 import org.brandao.brutos.annotation.View;
 import org.brandao.brutos.annotation.web.RequestMethod;
 import org.brandao.brutos.formhandling.entity.User;
@@ -27,7 +26,6 @@ public class UserController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	@Transient
 	@Inject
 	private UserRegistry userRegistry;
 
@@ -37,7 +35,7 @@ public class UserController {
 		if(logger.isDebugEnabled()){
 			logger.debug("index()");
 		}
-		
+
 		WebFlowController.redirectTo("/users");
 	}
 	
