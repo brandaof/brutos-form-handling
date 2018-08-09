@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 import javax.validation.Valid;
 
 import org.brandao.brutos.annotation.Action;
@@ -15,7 +14,6 @@ import org.brandao.brutos.annotation.Result;
 import org.brandao.brutos.annotation.Transient;
 import org.brandao.brutos.annotation.View;
 import org.brandao.brutos.annotation.web.RequestMethod;
-import org.brandao.brutos.annotation.web.ResponseErrors;
 import org.brandao.brutos.formhandling.entity.User;
 import org.brandao.brutos.formhandling.registry.UserRegistry;
 import org.brandao.brutos.validator.ValidatorException;
@@ -24,7 +22,6 @@ import org.brandao.brutos.web.WebFlowController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Singleton
 @Action(value="/users/add", view=@View("users/userForm"))
 public class UserController {
 
@@ -52,13 +49,13 @@ public class UserController {
 		if(logger.isDebugEnabled()){
 			logger.debug("findAllUsers()");
 		}
-		
+
 		return this.userRegistry.findAll();
 	}
 
 	@Action("/users")
 	@RequestMethod(RequestMethodTypes.POST)
-	@ResponseErrors(code=200, view="users/userForm")
+	@View("users/userForm")
 	public void updateUser(
 			@Valid
 			@Basic(bean="user")User user) throws ValidatorException{
