@@ -16,7 +16,7 @@ import org.brandao.brutos.annotation.web.RequestMethod;
 import org.brandao.brutos.formhandling.entity.User;
 import org.brandao.brutos.formhandling.registry.UserRegistry;
 import org.brandao.brutos.validator.ValidatorException;
-import org.brandao.brutos.web.RequestMethodTypes;
+import org.brandao.brutos.annotation.web.RequestMethodTypes;
 import org.brandao.brutos.web.WebFlowController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
